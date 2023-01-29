@@ -1,4 +1,5 @@
 import './header.css';
+import { NavLink } from 'react-router-dom';
 
 import Search from '../search/search';
 
@@ -10,7 +11,11 @@ const header: React.FC<{
   return (
     <div className='header-parent'>
       <Search callbackFn={props.callbackFn} />
-      <div className='header-title'>{props.title}</div>
+
+      <NavLink to='/'>
+        <div className='header-title'>{props.title}</div>
+      </NavLink>
+
       <div className='header-subTitle'>{props.subtitle}</div>
     </div>
   );

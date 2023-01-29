@@ -11,7 +11,7 @@ const Advertisements: React.FC<{
 }> = (props) => {
   return (
     <div className='advertisement-parent'>
-      <div className='a-title'>limited time offers</div>
+      <div className='a-title'>jeftino dam samo da prodam</div>
 
       <div className='advertisement-products'>
         {getMultipleRandom(props.items, 3).map((item: Tproducts, i: number) => {

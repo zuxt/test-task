@@ -10,8 +10,6 @@ import ImageCarousel from '../../components/imageCarousel/imageCarousel';
 const Product: React.FC = (props) => {
   const { id } = useParams();
 
-  console.log('ID', id);
-
   const [product, setProduct] = useState<Tproducts>({
     id: 0,
     title: 'INIT',

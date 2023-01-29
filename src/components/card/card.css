@@ -1,7 +1,7 @@
 .card-card {
   @apply md:w-64
   w-full
-  h-80
+  h-96
   bg-white 
   rounded 
   shadow

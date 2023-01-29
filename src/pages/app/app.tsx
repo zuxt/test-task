@@ -37,8 +37,8 @@ const App: React.FC = () => {
     <>
       <div className='app'>
         <Header
-          title='Best WebShop EVER'
-          subtitle='prepare to be amazed'
+          title='eKoridor'
+          subtitle='svega za raju i šire'
           callbackFn={handleSearch}
         />
         <Advertisements items={data.products} callbackFn={handleItemClick} />
