@@ -41,8 +41,9 @@ const App: React.FC = () => {
           subtitle='svega za raju i šire'
           callbackFn={handleSearch}
         />
-        <Advertisements items={data.products} callbackFn={handleItemClick} />
+
         <div className='app-main'>
+          <Advertisements items={data.products} callbackFn={handleItemClick} />
           <Routes>
             <Route
               path='/'
