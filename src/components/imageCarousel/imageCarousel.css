@@ -1,0 +1,38 @@
+.imageCarousel-parent {
+  @apply w-full
+    h-full
+    relative
+    flex
+    justify-center
+    items-center;
+}
+
+.imageCarousel-img {
+  @apply w-full;
+}
+
+.imageCarousel-prev,
+.imageCarousel-next {
+  @apply absolute
+    h-full
+    w-10
+    z-10
+    hover:bg-white
+    hover:opacity-40
+    top-0
+    flex
+    flex-col
+    justify-center
+    items-center
+    font-extrabold
+    text-2xl
+    cursor-pointer;
+}
+
+.imageCarousel-prev {
+  @apply left-0;
+}
+
+.imageCarousel-next {
+  @apply right-0;
+}

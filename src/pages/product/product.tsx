@@ -1,0 +1,54 @@
+import { useEffect, useState, useRef } from 'react';
+import './product.css';
+
+import { getSingleProduct } from '../../services/dummyRest';
+import { Tproducts } from '../../models/types';
+
+import ImageCarousel from '../../components/imageCarousel/imageCarousel';
+
+const Product: React.FC<{ id: number }> = (props) => {
+  const [product, setProduct] = useState<Tproducts>({
+    id: 0,
+    title: 'INIT',
+    description: 'Initial state',
+    price: 0,
+    discountPercentage: 0,
+    rating: 0,
+    stock: 0,
+    brand: 'none',
+    category: 'none',
+    thumbnail: '',
+    images: ['ddd'],
+  });
+  let i = useRef(0);
+
+  useEffect(() => {
+    getSingleProduct(props.id).then((ret) => {
+      setProduct((prev) => {
+        i.current = i.current + 1;
+        return { ...prev, ...ret };
+      });
+    });
+  }, []);
+
+  return (
+    <>
+      <div className='product-main'>
+        <div className='product-parent'>
+          <div className='product-imageparent'>
+            <ImageCarousel key={i.current} imageList={product.images} />
+          </div>
+
+          <div className='product-descparent'>
+            <div className='product-title'>{product.title}</div>
+            <div className='product-desc'>{product.description}</div>
+            <div className='product-price'>{`${product.price}€`}</div>
+            <div className='product-availability'>{`ONLY ${product.stock} LEFT!`}</div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Product;

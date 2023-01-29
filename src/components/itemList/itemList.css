@@ -1,0 +1,27 @@
+.itemList-parent {
+  @apply p-6
+    flex
+    flex-row
+    flex-wrap
+    gap-10
+    justify-center
+    items-center
+    mx-6;
+}
+
+.itemList-paginationParent {
+  @apply p-6
+    flex
+    justify-center
+    items-center;
+}
+
+.itemList-worning {
+  @apply text-blue-300
+  text-center
+  text-xl
+  font-semibold
+  px-6
+  py-2
+  uppercase;
+}

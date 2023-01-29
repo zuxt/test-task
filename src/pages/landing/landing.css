@@ -1,0 +1,16 @@
+.landing-parent {
+  @apply w-full h-full
+  mx-auto 
+  min-h-screen
+  flex 
+  flex-col
+  bg-slate-100;
+}
+
+.landing-main {
+  @apply container
+  max-w-screen-lg
+  mx-auto
+  h-auto
+  bg-white;
+}

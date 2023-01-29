@@ -1,0 +1,50 @@
+.product-main {
+  @apply container 
+    max-w-screen-lg
+    mx-auto;
+}
+
+.product-parent {
+  @apply w-full
+    flex
+    flex-col 
+    md:flex-row
+    mt-20
+    bg-white
+    min-h-fit
+    max-h-full
+    p-9;
+}
+
+.product-imageparent {
+  @apply w-full md:w-1/2;
+}
+
+.product-descparent {
+  @apply p-10
+  flex
+  flex-col
+  justify-start
+  items-start;
+}
+
+.product-title {
+  @apply text-slate-500
+  text-2xl
+  mb-6
+  font-bold;
+}
+
+.product-desc {
+  @apply text-slate-500;
+}
+
+.product-price {
+  @apply text-blue-500
+  my-6
+  text-lg;
+}
+
+.product-availability {
+  @apply text-red-500;
+}

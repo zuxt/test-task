@@ -1,0 +1,29 @@
+.navigation-parent {
+  @apply p-6;
+}
+
+.navigation-ul {
+  @apply flex
+  flex-row
+  flex-wrap
+  gap-4
+  flex-shrink-0
+  flex-grow-0
+  justify-center
+  items-center;
+}
+
+.navigation-li {
+  @apply w-auto
+  cursor-pointer
+  hover:bg-blue-100
+  p-2
+  uppercase
+  text-gray-400
+  hover:text-gray-800;
+}
+
+.navigation-selected {
+  @apply bg-blue-100
+    text-gray-800;
+}

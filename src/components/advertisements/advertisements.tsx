@@ -1,0 +1,27 @@
+import React from 'react';
+import './advertisements.css';
+import { Tproducts } from '../../models/types';
+import { getMultipleRandom } from '../../utils/utils';
+
+import SimpleCard from '../simpleCard/simpleCard';
+
+const Advertisements: React.FC<{
+  items: Tproducts[];
+  callbackFn: (id: number) => void;
+}> = (props) => {
+  return (
+    <div className='advertisement-parent'>
+      <div className='a-title'>limited time offers</div>
+
+      <div className='advertisement-products'>
+        {getMultipleRandom(props.items, 3).map((item: Tproducts, i: number) => {
+          return (
+            <SimpleCard key={i} item={item} callbackFn={props.callbackFn} />
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default Advertisements;

@@ -1,0 +1,30 @@
+.advertisement-parent {
+  @apply w-full 
+  px-6 
+  py-6
+  bg-gray-100
+  flex
+  flex-col;
+}
+
+.a-title {
+  @apply text-2xl 
+  font-bold 
+  text-left
+  text-indigo-400 mb-8
+  uppercase
+  h-6;
+}
+
+.advertisement-products {
+  @apply flex 
+  /* lg:grid-cols-3
+  md:grid-cols-2
+  sm:grid-cols-1 */
+  mx-6
+  flex-row
+  flex-wrap
+  gap-10
+  justify-around
+  items-center;
+}
