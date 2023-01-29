@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+
 import './index.css';
 
 import ProducsContext from './context/productsContext';
 
-import LandingPage from './pages/landing/landing';
+import App from './pages/app/app';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,8 +14,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ProducsContext>
-      <LandingPage />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ProducsContext>
   </React.StrictMode>
 );
-

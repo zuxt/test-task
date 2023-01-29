@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import './product.css';
 
 import { getSingleProduct } from '../../services/dummyRest';
@@ -6,7 +7,11 @@ import { Tproducts } from '../../models/types';
 
 import ImageCarousel from '../../components/imageCarousel/imageCarousel';
 
-const Product: React.FC<{ id: number }> = (props) => {
+const Product: React.FC = (props) => {
+  const { id } = useParams();
+
+  console.log('ID', id);
+
   const [product, setProduct] = useState<Tproducts>({
     id: 0,
     title: 'INIT',
@@ -23,13 +28,13 @@ const Product: React.FC<{ id: number }> = (props) => {
   let i = useRef(0);
 
   useEffect(() => {
-    getSingleProduct(props.id).then((ret) => {
+    getSingleProduct(Number(id)).then((ret) => {
       setProduct((prev) => {
         i.current = i.current + 1;
         return { ...prev, ...ret };
       });
     });
-  }, []);
+  }, [id]);
 
   return (
     <>
