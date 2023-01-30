@@ -11,6 +11,7 @@ const Itemlist: React.FC<{
 }> = (props) => {
   const maxItemsOnPage: number = 10;
   const [page, setpage] = useState<number>(0);
+
   const handlePages = (pageNo: number) => {
     setpage(pageNo);
   };
