@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './product.css';
 
@@ -23,12 +23,10 @@ const Product: React.FC = (props) => {
     thumbnail: '',
     images: ['ddd'],
   });
-  let i = useRef(0);
 
   useEffect(() => {
     getSingleProduct(Number(id)).then((ret) => {
       setProduct((prev) => {
-        i.current = i.current + 1;
         return { ...prev, ...ret };
       });
     });
@@ -39,7 +37,7 @@ const Product: React.FC = (props) => {
       <div className='product-main'>
         <div className='product-parent'>
           <div className='product-imageparent'>
-            <ImageCarousel key={i.current} imageList={product.images} />
+            <ImageCarousel imageList={product.images} />
           </div>
 
           <div className='product-descparent'>

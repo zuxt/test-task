@@ -7,7 +7,6 @@ import SimpleCard from '../simpleCard/simpleCard';
 
 const Advertisements: React.FC<{
   items: Tproducts[];
-  callbackFn: (id: number) => void;
 }> = (props) => {
   return (
     <div className='advertisement-parent'>
@@ -15,9 +14,7 @@ const Advertisements: React.FC<{
 
       <div className='advertisement-products'>
         {getMultipleRandom(props.items, 3).map((item: Tproducts, i: number) => {
-          return (
-            <SimpleCard key={i} item={item} callbackFn={props.callbackFn} />
-          );
+          return <SimpleCard key={i} item={item} />;
         })}
       </div>
     </div>

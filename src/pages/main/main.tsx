@@ -11,7 +11,6 @@ import {
 } from '../../services/dummyRest';
 
 const Main: React.FC<{
-  callbackFn: (id: number) => void;
   showQuery: string;
 }> = (props) => {
   const { data } = useContext(DataContext);
@@ -19,7 +18,7 @@ const Main: React.FC<{
   const [filtered, setFiltered] = useState(data.products);
 
   useEffect(() => {
-    if (props.showQuery !== ' ') {
+    if (props.showQuery.length > 0) {
       searchProducts(props.showQuery).then((ret) => {
         setFiltered(ret.products);
         setSelected('');
@@ -27,7 +26,7 @@ const Main: React.FC<{
     } else {
       setFiltered(data.products);
     }
-  }, []);
+  }, [props.showQuery, data.products]);
 
   const navigationCallback = (itemName: string) => {
     getProductsByCategorie(itemName).then((ret) => {
@@ -39,7 +38,7 @@ const Main: React.FC<{
   return (
     <>
       <Navigation callBackFn={navigationCallback} current={selected} />
-      <Itemlist items={filtered} callbackFn={props.callbackFn} />
+      <Itemlist items={filtered} />
     </>
   );
 };

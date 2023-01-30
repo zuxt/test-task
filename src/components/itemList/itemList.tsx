@@ -1,4 +1,4 @@
-import { useState, useId } from 'react';
+import { useState } from 'react';
 import './itemList.css';
 
 import { Tproducts } from '../../models/types';
@@ -8,7 +8,6 @@ import Pagination from '../pagination/pagination';
 
 const Itemlist: React.FC<{
   items: Tproducts[];
-  callbackFn: (id: number) => void;
 }> = (props) => {
   const maxItemsOnPage: number = 10;
   const [page, setpage] = useState<number>(0);
@@ -26,7 +25,7 @@ const Itemlist: React.FC<{
               page * maxItemsOnPage + maxItemsOnPage
             )
             .map((item, i: number) => {
-              return <Card key={i} item={item} callbackFn={props.callbackFn} />;
+              return <Card key={i} item={item} />;
             })
         ) : (
           <h3 className='itemList-worning'>
@@ -36,7 +35,6 @@ const Itemlist: React.FC<{
       </div>
       <div className='itemList-paginationParent'>
         <Pagination
-          key={useId()}
           callbackFn={handlePages}
           current={page}
           max={Math.round(props.items.length / maxItemsOnPage - 1)}

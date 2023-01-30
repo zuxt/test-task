@@ -3,7 +3,6 @@ import './imageCarousel.css';
 
 const ImageCarousel: React.FC<{ imageList: string[] }> = (props) => {
   const [image, setImage] = useState<string>(props.imageList[0]);
-  const [index, setIndex] = useState<number>(0);
 
   const clickHandler = (state: string) => {
     if (state === 'prev') {
@@ -16,15 +15,15 @@ const ImageCarousel: React.FC<{ imageList: string[] }> = (props) => {
   };
 
   useEffect(() => {
-    setIndex(index + 1);
-  }, [image]);
+    setImage(props.imageList[0]);
+  }, [props.imageList]);
 
   return (
     <div className='imageCarousel-parent'>
       <div className='imageCarousel-prev' onClick={() => clickHandler('prev')}>
         {'<'}
       </div>
-      <img className='imageCarousel-img' key={index} src={image} alt={image} />
+      <img className='imageCarousel-img' src={image} alt={image} />
       <div className='imageCarousel-next' onClick={() => clickHandler('next')}>
         {'>'}
       </div>

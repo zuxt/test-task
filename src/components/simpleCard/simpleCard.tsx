@@ -1,15 +1,17 @@
 import './simpleCard.css';
 import { Tproducts } from '../../models/types';
+import { useNav } from '../../hooks/useNav';
 
 const SimpleCard: React.FC<{
   item: Tproducts;
-  callbackFn: (id: number) => void;
 }> = (props) => {
+  const usenav = useNav();
+
   return (
     <div
       className='simpleCard-card '
       onClick={() => {
-        props.callbackFn(props.item.id);
+        usenav(props.item.id);
       }}
     >
       <div className='simpleCard-card-impParent'>
