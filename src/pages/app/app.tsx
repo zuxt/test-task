@@ -30,8 +30,8 @@ const App: React.FC = () => {
     <>
       <div className='app'>
         <Header
-          title='eKoridor'
-          subtitle='svega za raju i šire'
+          title='NOT ANOTHER WEB SHOP'
+          subtitle='search what you like. buy what you need.'
           callbackFn={handleSearch}
         />
 
