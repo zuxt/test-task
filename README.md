@@ -1,4 +1,4 @@
-Simple WEBshop like React app.
+Simple eCommerce React app.
 
 Practising react and trying tailwind.
 
